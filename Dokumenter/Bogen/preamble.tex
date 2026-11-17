@@ -1,0 +1,20 @@
+% preamble.tex -- fælles opsætning til Jagtprøven
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[danish]{babel}
+\usepackage[scaled=0.95]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+
+\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{longtable,booktabs,array}
+
+% Farver
+\definecolor{jagtgroen}{HTML}{2F4F3A}
+\definecolor{jagtguld}{HTML}{B08D3C}
+
+% Overskrifter i jagtgrøn
+\usepackage{titlesec}
+\titleformat{\section}{\Large\bfseries\color{jagtgroen}}{\thesection}{0.8em}{}
+\titleformat{\subsection}{\large\bfseries\color{jagtgroen}}{\thesubsection}{0.8em}{}

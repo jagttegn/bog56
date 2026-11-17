@@ -1,0 +1,69 @@
+% ======================
+% basalSingle.tex
+% Kun specialindstillinger til "single art"-slides
+% Forudsætter at generel preamble allerede er indlæst
+% ======================
+
+% Pakke til præcis placering af kildehenvisning (hvis ikke allerede indlæst i generel preamble)
+\usepackage[absolute,overlay]{textpos}
+
+% Stil til kildehenvisning nederst på slide
+\setbeamercolor{framesource}{fg=gray}
+\setbeamerfont{framesource}{size=\scriptsize}
+
+% Kommando til at placere kildehenvisning (f.eks. Wikipedia-kreditering)
+\newcommand{\kilde}[1]{%
+  \begin{textblock*}{15cm}(0.5cm,8.6cm)  % justér koordinater efter behov
+    \begin{beamercolorbox}[right,wd=\textwidth]{framesource}
+      \raggedleft #1
+    \end{beamercolorbox}
+  \end{textblock*}
+}
+
+% Standard tekststil til venstre kolonne på arts-slides
+\newcommand{\artsfont}{%
+  \small               % Lidt mindre tekst
+  \RaggedRight         % Venstrejusteret med pæne linjeskift
+  \setlength{\parskip}{0.5em}  % Afstand mellem afsnit
+}
+
+% Ny kommando til hurtig oprettelse af ensartede arts-slides
+% Brug: \artslide[star]{Dansk navn}{Videnskabeligt navn}{Ekstra info}{Billedsti}{Kilde}
+% Eksempel: \artslide[star]{Blisgås}{Anser albifrons}{i familien "grå gæs"}{Billeder/Dyr/Fugle/Gaes/blisgås.jpg}{Foto: XX / CC BY-SA 4.0}
+% Udelad [star] hvis der ikke skal være stjerne-ikon
+
+\newcommand{\artslide}[6][nostar]{%
+  \begin{frame}
+    \begin{minipage}[t]{0.85\textwidth}
+      \Large\textbf{#2}
+    \end{minipage}%
+    \hfill
+    \ifx#1nostar\else
+      \begin{minipage}[t]{0.1\textwidth}
+        \raggedleft
+        \includegraphics[width=0.55cm,height=0.55cm,keepaspectratio]{Billeder/Ikoner/star.png}%
+      \end{minipage}%
+    \fi
+    \vspace{0.25em}
+
+    \begin{columns}[T]
+      % Venstre kolonne: Tekst
+      \column{0.55\textwidth}
+      \artsfont
+      \textbf{\textit{#3}}~– #4 \par
+      % Her kan du tilføje mere tekst manuelt i frame-filen
+
+      % Højre kolonne: Billede i ramme
+      \column{0.40\textwidth}
+      \centering
+      \fbox{%
+        \begin{minipage}{\linewidth}
+          \centering
+          \includegraphics[width=0.8\linewidth, height=10cm, keepaspectratio]{#5}
+        \end{minipage}%
+      }
+    \end{columns}
+
+    \kilde{#6}  % Kildehenvisning nederst
+  \end{frame}
+}

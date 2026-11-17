@@ -1,0 +1,67 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[danish]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[margin=2cm]{geometry}
+\usepackage{array}
+\usepackage{ragged2e}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{lastpage} % Bruges til at vise sidetal fx "Side 1 af 3"
+\usepackage{hyperref} 
+
+% --- Konfigurer footer med logo ---
+\pagestyle{fancy}
+\fancyhf{} % Ryd eksisterende header/footer
+
+% Sørg for at logoet ikke klippes af og sidder pænt
+\fancyfoot[L]{%
+  \raisebox{-0.4\height}{%
+    \includegraphics[width=2.5cm]{Billeder/Logo/OesterbroJagttegn_clean.png}%
+  }%
+}
+
+% (Valgfrit) — sidetal i højre hjørne
+\fancyfoot[R]{Side \thepage\ af \pageref{LastPage}}
+
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% --- Dokumentinformation ---
+\title{Checkliste til udbygningen af viden indenfor udøvelse af jagt}
+\author{AS}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{fancy} % Sørg for at footeren gælder også på forsiden
+
+\vspace{0.5cm}
+
+Bemærk at "Link til ..." er clickable i kolonnen "Reference".
+
+\begin{center}
+\begin{tabular}{|>{\raggedright\arraybackslash}p{4.5cm}|>{\raggedright\arraybackslash}p{1.5cm}|>{\raggedright\arraybackslash}p{5cm}|>{\raggedright\arraybackslash}p{5.5cm}|}
+\hline
+\textbf{Dato} & \textbf{Lektion} & \textbf{Emner} & \textbf{Reference} \\
+\hline
+
+Onsdag 22/10 eller torsdag 30/10 (Svanemøllen) 20:00–22:00 & Teori 1 & Introduktion, Jagtprøven, Vildtbiologi, Våbenhåndtering, Ænder 1. del & Bogen Jagttegn: s. 7-24, s. 37-86, \href{https://sgavmst.dk/media/2w5hrceb/2025_instruks-for-jagtproeven.pdf}{Link til Instruks For Jagtprøven 2025}\\
+\hline
+
+Onsdag 19/11 eller torsdag 27/11 (Svanemøllen) 20:00–22:00 & Teori 2 & Repetition Teori 1, Ænder 2. del, Jagtlovgivningen (Våbenbekendtgørelsen), Øvrige andefugle, Våbenhåndtering, Jagthunde, Rovfugle, Jægerudtryk 1. del & Bogen Jagttegn: s. 45-57, s. 90-137, s. 245-262, \href{https://www.retsinformation.dk/eli/lta/2021/2531}{Link til Våbenbekendtgørelsen} \\
+\hline
+
+Onsdag 17/12 eller torsdag 15/1 (Svanemøllen) 20:00–22:00 & Teori 3 & Måger, Vadefugle, Vandhøns, Spurvefugle, Duer, Jagtlovgivning (Æggebekendtgørelsen, Vildtskadebekendtgørelsen, Regler for skydetårne og -stiger) & Bogen Jagttegn s. 138-181, s.183-198, s. 199-241 \\
+\hline
+
+Onsdag 21/1 eller torsdag 29/1 (Svanemøllen) 20:00–22:00 & Teori 4 & Etik og bæredygtighed & Bogen Jagttegn s. 267-312 \\
+\hline
+
+Onsdag 18/3 eller torsdag 26/3 (Svanemøllen) 20:30–22:10 & Teori 5 & Praktisk jagtplanlægning & Lav plan. Deltagere: Tegn kort. Lærer: Værktøjer (kompas, GPS). \\
+\hline
+
+\end{tabular}
+\end{center}
+
+\end{document}

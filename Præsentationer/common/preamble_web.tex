@@ -1,0 +1,128 @@
+% --- Tema og fonte ---
+\usetheme{Madrid}
+\usefonttheme{serif}
+% --- Farver ---
+\definecolor{myteal}{RGB}{14,71,57}
+\setbeamercolor{title}{fg=white}
+\setbeamercolor{frametitle}{fg=white,bg=myteal}
+\setbeamercolor{block title}{fg=white,bg=myteal}
+\setbeamercolor{block body}{bg=myteal!10}
+\setbeamercolor{normal text}{fg=myteal}
+\setbeamercolor{background canvas}{bg=white}
+\setbeamercolor{structure}{fg=myteal}
+\setbeamercolor{palette primary}{fg=white,bg=myteal}
+\setbeamercolor{palette secondary}{fg=white,bg=myteal!80}
+\setbeamercolor{palette tertiary}{fg=white,bg=myteal!60}
+\setbeamercolor{author in head/foot}{fg=white,bg=myteal}
+\setbeamercolor{title in head/foot}{fg=white,bg=myteal!80}
+\setbeamercolor{date in head/foot}{fg=white,bg=myteal!60}
+\setbeamercolor{titlelike}{fg=myteal}
+\setbeamercolor{section in toc}{fg=myteal}
+\setbeamercolor{item}{fg=myteal}
+% --- Sprog og encoding ---
+\usepackage[utf8]{inputenc}
+\usepackage[danish]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+% --- Matematik ---
+\usepackage{amsmath,amsfonts,amssymb}
+% --- Grafik og layout ---
+\usepackage{graphicx}
+\usepackage{ragged2e}
+\usepackage{booktabs}
+\usepackage{arydshln}
+\usepackage[most]{tcolorbox}
+% --- Ikoner og figurer ---
+\usepackage{fontawesome5}
+\usepackage{tikz}
+\usetikzlibrary{positioning,arrows.meta,shapes.geometric,calc}
+\usepackage{circuitikz}
+% --- Positionering ---
+\usepackage[absolute,overlay]{textpos}
+% --- CSV ---
+\usepackage{csvsimple}
+% --- Kildehenvisning nederst på slides ---
+\setbeamercolor{framesource}{fg=gray,bg=white}
+\setbeamerfont{framesource}{size=\scriptsize}
+\newcommand{\framesource}[1]{%
+  \begin{textblock*}{12cm}(0.5cm,8.6cm)
+    \raggedleft
+    \beamercolorbox[wd=\textwidth,rightskip=0.5cm]{framesource}{#1}
+  \end{textblock*}
+}
+% --- Automatisk billedattribution ---
+\csvreader[
+  head to column names,
+  no head
+]{Billeder/billedkilder.csv}{}{}
+\newcommand{\billedkilde}[1]{%
+  \csvreader[
+    head to column names,
+    full filter=\ifcsvstrcmp{\filnavn}{#1}{\csvfilteraccept}{\csvfilterreject},
+    no head
+  ]{Billeder/billedkilder.csv}{}%
+  {%
+    \tiny\forfatter\ / Wikimedia Commons (\licens)%
+  }%
+}
+% --- Boksstile til jagttid-sliden ---
+\tcbset{
+  gruppe/.style={
+    enhanced,
+    colback=white,
+    colframe=myteal,
+    coltitle=myteal,
+    boxrule=0.8pt,
+    dashed,
+    sharp corners,
+    fonttitle=\bfseries\large,
+    attach boxed title to top left={yshift=-2mm,xshift=3mm},
+    boxed title style={colback=white,colframe=white,boxrule=0pt,sharp corners},
+    top=1mm,left=1mm,right=1mm,bottom=1mm
+  },
+  felt/.style={
+    enhanced,
+    colback=white,
+    colframe=myteal,
+    boxrule=0.6pt,
+    sharp corners,
+    halign=center,
+    valign=center,
+    width=\linewidth,
+    height=1.55cm,
+    fit,
+    fit algorithm=fontsize,
+    fit basedim=7pt,
+    boxsep=0.3mm,
+    left=0.5mm, right=0.5mm, top=0.3mm, bottom=0.3mm
+  },
+  feltfri/.style={
+    enhanced,
+    colback=white,
+    colframe=myteal,
+    boxrule=0.6pt,
+    sharp corners,
+    halign=center,
+    valign=center,
+    width=\linewidth,
+    boxsep=0.3mm,
+    left=0.5mm, right=0.5mm, top=0.3mm, bottom=0.3mm,
+    fontupper=\scriptsize
+  }
+}
+% --- Matematiske operatorer ---
+\DeclareMathOperator{\sen}{sen}
+\DeclareMathOperator{\tg}{tg}
+% --- Beamer-indstillinger ---
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{navigation symbols}{}
+% --- Forfatter ---
+\author[OSJAGTTEGN.DK]{OSJAGTTEGN.DK}
+% --- Hyperref (altid sidst) ---
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=myteal,
+  urlcolor=myteal,
+  citecolor=myteal
+}

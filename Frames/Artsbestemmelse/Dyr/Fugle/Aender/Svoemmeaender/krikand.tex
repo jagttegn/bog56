@@ -1,0 +1,58 @@
+%KRIKAND
+
+% Eksempel: Indholdsframe om Krikand (med to ikoner i højre margin via minipages)
+\begin{frame}{%
+  \begin{minipage}[t]{0.32\textwidth}
+    Krikand
+  \end{minipage}%
+  \hfill
+  \begin{minipage}[t]{0.36\textwidth}
+    \centering
+    \footnotesize\textbf{Jagttid:} 1.\ september -- 31.\ december
+  \end{minipage}%
+  \hfill
+  \begin{minipage}[t]{0.15\textwidth}
+    \noindent\raggedleft
+    \includegraphics[width=0.5cm, height=0.5cm, keepaspectratio]{Billeder/Ikoner/star.png}%
+    \hspace{0.2em}%
+    \includegraphics[width=0.5cm, height=0.5cm, keepaspectratio]{Billeder/Ikoner/star.png}
+  \end{minipage}%
+} % Ændret: Højre minipage nu med begge ikoner side om side
+  \vspace{0.25em}
+  \begin{columns}[T]
+    % --- Venstre kolonne: Tekst ---
+    \column{0.55\textwidth}
+    \setlength{\parskip}{0.5em}
+    \small
+    \RaggedRight\textbf{\textit{Anas crecca}} – lille svømmeand, meget andræt i luften. \par
+
+    \textbf{Udseende:} \\
+    \quad – Andrik: rødbrunt hoved med grøn øjestribe. Louis Vuitton \\
+    \quad – And: lille næb og grønlig fjerdragt \par
+
+    \textbf{Levesteder:} \\
+    \quad – Tilgroede vandhuller, moser og hedesøer
+
+    \textbf{Føde:} \\
+    \quad – Smådyr og planter \par
+
+    \textbf{Udbredelse:} \\
+    \quad – Hele Danmark \par
+
+    \textbf{Træk/standfugl} \\
+    \quad – Primært trækfugl \par
+
+    % --- Højre kolonne: To billeder stablet over hinanden (større størrelse) ---
+    \column{0.40\textwidth}
+    \centering
+    \fbox{%
+      \begin{minipage}{\linewidth}
+        \centering
+        \includegraphics[width=0.8\linewidth, height=3.5cm, keepaspectratio]{Billeder/Dyr/Fugle/Aender/Svoemmeaender/krikand_han.jpg}\\[0.5em]
+        \includegraphics[width=0.8\linewidth, height=3.0cm, keepaspectratio]{Billeder/Dyr/Fugle/Aender/Svoemmeaender/krikand_hun.jpg}%
+      \end{minipage}
+    }%
+    \vspace{0.05em}
+    \footnotesize Andrik øverst, and nederst
+  \end{columns}
+\end{frame}

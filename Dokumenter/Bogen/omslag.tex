@@ -1,0 +1,56 @@
+
+
+
+\newgeometry{margin=0pt}
+\thispagestyle{empty}
+
+\begin{tikzpicture}[remember picture, overlay]
+
+  % Baggrund
+  \fill[jagtgroen]
+    (current page.south west) rectangle (current page.north east);
+
+  % Ydre ramme
+  \draw[jagtguld, line width=2.5pt]
+    ([shift={(1.2cm,1.2cm)}]current page.south west) rectangle
+    ([shift={(-1.2cm,-1.2cm)}]current page.north east);
+
+  % Indre ramme
+  \draw[jagtguld, line width=0.8pt]
+    ([shift={(1.6cm,1.6cm)}]current page.south west) rectangle
+    ([shift={(-1.6cm,-1.6cm)}]current page.north east);
+
+  % Titel
+  \node[text=white, align=center, text width=0.72\paperwidth, font=\fontsize{52}{60}\selectfont\bfseries]
+    at ([yshift=3.8cm]current page.center) {Jagtprøven};
+
+  % Streg under titel
+  \draw[jagtguld, line width=1.5pt]
+    ([shift={(-4cm,1.1cm)}]current page.center) --
+    ([shift={(4cm,1.1cm)}]current page.center);
+
+  % Undertitel
+  \node[text=white, align=center, text width=0.68\paperwidth, font=\fontsize{22}{28}\selectfont]
+    at ([yshift=-0.6cm]current page.center) {Vejledning til effektiv beståelse af den teoretiske og praktiske del af jagtprøven};
+
+  % Beskrivelse
+  \node[text=jagtguld, align=center, text width=0.7\paperwidth, font=\fontsize{14.5}{19}\selectfont\itshape]
+    at ([yshift=-3.6cm]current page.center) {Hent seneste version gratis via osjagttegn.dk/bog};
+
+  % Open Source
+  \node[text=jagtguld, align=center, text width=0.7\paperwidth, font=\fontsize{13.5}{17.5}\selectfont\itshape]
+    at ([yshift=-5.1cm]current page.center) {Lærebogen er Danmarks første Open Source introduktionsbog til jagttegn};
+
+  % Licens
+  \node[text=jagtguld, align=center, text width=0.7\paperwidth, font=\fontsize{13.5}{17.5}\selectfont\itshape]
+    at ([yshift=-6.5cm]current page.center) {Licenseret under CC BY 4.0};
+
+  % Fod
+  \node[text=white, align=center, font=\small]
+    at ([yshift=2.6cm]current page.south) 
+    {Aleksander Sønder | \href{https://osjagttegn.dk}};
+
+\end{tikzpicture}
+
+\clearpage
+\restoregeometry
